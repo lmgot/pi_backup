@@ -1,0 +1,81 @@
+
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('/fontes/TAN-NIMBUS.otf') format('opentype');
+}
+
+/*global*/
+
+* { 
+    font-family: 'Poppins';
+    box-sizing: border-box;
+}
+body {
+    background-color: #f5f3ef;
+}
+
+/*menu vertical*/
+
+.containervertical {
+    width: 20%;
+    height: 100vh;
+    background-color: #efb810;
+    color: #F5F5F5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5%;
+    overflow-y: auto;
+}
+
+.menu-vertical ol {
+    margin-bottom: 5%;
+}
+
+.menu-vertical a {
+    color: white;
+    text-decoration: none;
+    font-size: 100%;
+}
+
+/*main*/
+
+.main {
+    background-color: #fff;
+    margin-left: 20%;  /* Para garantir que comece logo após o menu */
+    color: #000000;
+    height:50vh;
+    padding: 20px;
+}
+
+.perfil-img {
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*Galeria*/
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    width: 90%;
+    max-width: 1600px;
+}
+
+
+.photo img {
+    width: 115%;
+    height: 105%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo img:hover {
+    transform: scale(1.05);
+}
+
+
