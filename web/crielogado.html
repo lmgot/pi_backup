@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>stand out.</title>
+        <link rel="stylesheet" href="estilo.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- link para importar a fonte -->
+        <link rel="stylesheet" href="/fontes/TAN-NIMBUS.otf">
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1 class="destaqueCOMHOVER"><a href="indexlogado.html" style="text-decoration: none; color: #000; font-size: xxx-large;">stand out.</a></h1>
+                <nav>
+                    <ul>
+                        <ol><a href="descubralogado.html"><strong>Descubra</strong></a></ol>
+                        <ol><a href="crielogado.html" ><strong>Crie</strong></a></ol>
+                        <ol><a href="jsp/perfil.jsp" class="fundocinza"><strong>Seu perfil</strong></a></ol>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+        <main>
+            <form action ="jsp/publicacoes.jsp" method ="post" enctype="multipart/form-data"> 
+                <table>
+                    <div id="preview-container">
+                        <img id="preview" src="" alt="Prévia da Imagem" style="display: none; width: 200px; margin-top: 10px;">
+                    </div>
+                    <tr><td>Postagem</td><td><input type = "file" name = "postagem" required id="file-input" accept="image/*" onchange="previewImage(event)"></td>
+                    <tr><td>Legenda</td><td><input type = "text" size = "35" maxlength = "50" name = "legenda" placeholder="Legenda"> </td></tr>  
+                    <!-- add legenda -->
+                    <tr><td><input type = "submit" class="button" size = "50" maxlength = "50" name = "Publicar" value="Publicar" required> </td></tr>
+                    <!-- publicar -->
+                </table>
+            </form>  
+        </main>
+
+        <script>
+            // Função para gerar a prévia da imagem
+            function previewImage(event) {
+                const file = event.target.files[0];  // Captura o arquivo selecionado
+                const preview = document.getElementById('preview');  // Elemento da imagem para exibir a prévia
+
+                // Verifica se o arquivo é uma imagem
+                if (file && file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+
+                    // Quando o arquivo for carregado, exibe a prévia
+                    reader.onload = function (e) {
+                        preview.src = e.target.result;  // Atribui a URL da imagem ao src da tag <img>
+                        preview.style.display = 'block';  // Torna a imagem visível
+                    };
+
+                    // Lê o arquivo como uma URL
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.style.display = 'none';  // Se não for imagem, esconde a prévia
+                }
+            }
+        </script>
+
+        <footer>
+            <div class="marca">
+                <h2>stand out.</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="sobrelogado.html#Sobre">Sobre</a></li>
+                    <li><a href="sobrelogado.html#Missao">Missão</a></li>
+                    <li><a href="sobrelogado.html#Contato">Contato</a></li>
+                </ul>
+            </nav>
+            <p class="termos">Todos os direitos reservados a empresa "stand out."<br>Termos e Condições | Privacidade</p>
+        </footer>
+    </body>
+</html>

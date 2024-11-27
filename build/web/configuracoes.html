@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Configurações de Conta | stand out</title>
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+        <header>
+            <h1>Configurações</h1>
+            <nav>
+                <ul>
+                    <li><a href="jsp/perfil.jsp">Voltar</a></li>
+                    <li><a href="jsp/logout.jsp">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form action="jsp/alterarDados.jsp">
+                <table>
+                    <tr>
+                        <td>Alterar dados da conta:</td>
+                    </tr>
+                    <tr>
+                        <td>Nome:</td>
+                        <td><input type="text" name="nome" placeholder="Novo nome"></td>
+                    </tr>
+                    <tr>
+                        <td>Idade:</td>
+                        <td><input type="text" name="idade" placeholder="Nova idade"></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="text" name="email" placeholder="Novo email"></td>
+                    </tr>
+                    <tr>
+                        <td>Senha:</td>
+                        <td><input type="password" name="senha" placeholder="Nova senha"></td>
+                    </tr>
+                    <tr>
+                        <td><input type = "submit" class="button" size = "50" maxlength = "50" name = "Atualizar" value="Atualizar" required> </td>
+                    </tr>
+                </table>
+            </form>
+
+            <h2>Excluir Conta</h2>
+            <form action="jsp/deletarConta.jsp">
+                <table>
+                    <tr>
+                        <td>Apagar conta</td>
+                        <td><input type="submit" value="Deletar Conta" onclick="alert('Deseja mesmo apagar sua conta?')"></td>
+                    </tr>
+                </table>
+            </form>
+        </main>
+    </body>
+</html>
+
