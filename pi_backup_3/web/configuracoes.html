@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Configurações de Conta | stand out</title>
+        <link rel="stylesheet" href="estilo_logados.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- link para importar a fonte -->
+        <link rel="stylesheet" href="/fontes/TAN-NIMBUS.otf">
+    </head>
+    <body style="color: white">
+        <header>
+            <h1 class="destaque">Configurações</h1>
+            <nav>
+                <ul>
+                    <li><a href="jsp/perfil.jsp" style="text-decoration: none; color: white; font-size: medium;" >Voltar</a></li>
+                    <li><a href="jsp/logout.jsp" style="text-decoration: none; color: white; font-size: medium;">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form action="jsp/alterarDados.jsp">
+                <table>
+                    <tr>
+                        <td>Alterar dados da conta:</td>
+                    </tr>
+                    <tr>
+                        <td>Nome:</td>
+                        <td><input type="text" name="nome" placeholder="Novo nome"></td>
+                    </tr>
+                    <tr>
+                        <td>Idade:</td>
+                        <td><input type="text" name="idade" placeholder="Nova idade"></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="text" name="email" placeholder="Novo email"></td>
+                    </tr>
+                    <tr>
+                        <td>Senha:</td>
+                        <td><input type="password" name="senha" placeholder="Nova senha"></td>
+                    </tr>
+                    <tr>
+                        <td><input type = "submit" class="button" size = "50" maxlength = "50" name = "Atualizar" value="Atualizar" required> </td>
+                    </tr>
+                </table>
+            </form>
+
+            <h2>Excluir Conta</h2>
+            <form action="jsp/deletarConta.jsp" onsubmit="confirmarExclusao(event)">
+                <table>
+                    <tr>
+                        <td>Apagar conta</td>
+                        <td><input type="submit" value="Deletar Conta"></td>
+                    </tr>
+                </table>
+            </form>
+        </main>
+        <script>
+            function confirmarExclusao(event) {
+                const confirmacao = confirm("Tem certeza de que deseja apagar sua conta? Esta ação não pode ser desfeita.");
+
+                if (!confirmacao) {
+                    event.preventDefault();
+                } else {
+                    alert('Conta excluída.');
+                }
+            }
+        </script>
+    </body>
+</html>
+
